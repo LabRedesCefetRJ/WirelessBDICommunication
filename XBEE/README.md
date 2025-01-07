@@ -8,7 +8,7 @@ Para configurar os módulos XBEE, é necessário utilizar o software XCTU. Os m�
 
 ## Pinagem
 
-Para estabelecer a comunicação serial, foi utilizado o XBEE Explorer, que possui as portas `RST, RX, TX, GND e 5V`. No arduino, a porta `10` foi utilizada como `TX` e a porta `11` como `RX`.
+Para estabelecer a comunicação serial, foi utilizado o XBEE Explorer, que possui as portas `RST`, `RX`, `TX`, `GND` e `5V`. No arduino, a porta `10` foi utilizada como `TX` e a porta `11` como `RX`.
 
 Ambos coordenadores e roteadores devem ser conectados ao Arduíno da seguinte forma:
 
