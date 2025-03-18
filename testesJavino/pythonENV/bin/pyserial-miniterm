@@ -1,4 +1,4 @@
-#!/home/nilson/chonGroup/comunicacao_wireless_arduino/testesJavino/pythonENV/bin/python3
+#!/home/a4pm/antonio.docs/Faculdade/TCC2/comunicacao_wireless_arduino/testesJavino/pythonENV/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
