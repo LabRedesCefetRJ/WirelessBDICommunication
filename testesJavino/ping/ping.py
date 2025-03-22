@@ -3,7 +3,7 @@ import time
 import random 
 import string
 
-sizeOfMsg = 255
+sizeOfMsg = 128
 porta = "/dev/ttyUSB0"  
 comm = javino.start(porta)
 
@@ -23,7 +23,7 @@ if comm:
                 print(".", end =" ", flush=True)
                 attemp = attemp -1
                 if javino.availableMsg(comm):
-                    received = javino.getMsg(comm)
+                    received = javino.getMsg()
                     if received == message:
                         attemp = 0
                         print(f"received: {received}", end =" ", flush=True)

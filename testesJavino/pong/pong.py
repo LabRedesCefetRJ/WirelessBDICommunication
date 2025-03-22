@@ -1,7 +1,4 @@
 import javino 
-import time 
-import random 
-import string
 
 porta = "/dev/ttyUSB1" 
 comm = javino.start(porta)
