@@ -12,7 +12,7 @@ comm = javino.start(porta)
 QTD_MEDICOES = 10
 TIMEOUT = 15
 INTERVAL_BETWEEN_MEASUREMENTS = 1
-MESSAGE_SIZE = [16, 32, 64, 128, 255]  # Tamanhos de mensagem em bytes
+MESSAGE_SIZE = [255]  # Tamanhos de mensagem em bytes
 MODULE_NAME = "LORA"  # Nome do módulo de transmissão
 TRANSMISSION_DISTANCE = 16  # Distância em metros
 
