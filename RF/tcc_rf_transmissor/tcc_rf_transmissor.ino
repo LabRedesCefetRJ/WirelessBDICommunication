@@ -6,6 +6,12 @@
 
 RH_ASK rf_driver;
 
+void prepararMensagem(uint8_t *buffer, const char *mensagem, uint8_t tamanhoMaximo) {
+    memset(buffer, 0, tamanhoMaximo); // Limpa o buffer
+    strncpy((char *)buffer, mensagem, tamanhoMaximo - 1); // Copia a mensagem e evita overflow
+}
+
+
 void setup() {
   rf_driver.init();
   pinMode(LED_BUILTIN, OUTPUT);
@@ -17,12 +23,16 @@ void loop() {
   uint8_t buff[20];
   uint8_t bufflen = sizeof(buff);
 
-  const char *msg = "Esta é uma mensagem";
-  rf_driver.send((uint8_t *)msg, strlen(msg));
+  // Prepara a mensagem para envio
+  prepararMensagem(buff, "Esta é uma mensagem", bufflen);
+
+  rf_driver.send(buff, strlen((char *)buff)); // Envio seguro da mensagem
   rf_driver.waitPacketSent();
 
   if (rf_driver.available()) {
     rf_driver.recv(buff, &bufflen);
+    buff[bufflen] = '\0'; // Garante que a string termine corretamente
+
     Serial.print("Mensagem recebida: ");
     Serial.println((char *)buff);
   }

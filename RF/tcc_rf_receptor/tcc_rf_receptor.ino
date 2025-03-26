@@ -6,6 +6,10 @@
 
 RH_ASK rf_driver;
 
+void limparBuffer(uint8_t *buff, uint8_t tamanho) {
+    memset(buff, 0, tamanho); // Preenche o buffer com zeros
+}
+
 void setup() {
   rf_driver.init();
   pinMode(LED_BUILTIN, OUTPUT);
@@ -14,10 +18,14 @@ void setup() {
 }
 
 void loop() {
-  // Cria um buffer com o tamanho da mensagem esperada
-  uint8_t buff[20];
+  uint8_t buff[255];
   uint8_t bufflen = sizeof(buff);
+  
+  limparBuffer(buff, bufflen); // Garante que o buffer esteja limpo
+  
   if (rf_driver.recv(buff, &bufflen)) {
+    buff[bufflen] = '\0'; // Garante que a string termine corretamente
+    
     Serial.print("Mensagem recebida: ");
     Serial.println((char *)buff);
 
