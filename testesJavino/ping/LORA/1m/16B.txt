@@ -1,0 +1,1 @@
+{"module": "LORA", "distance": 1, "message_sizes": [16, 32, 64, 128, 255], "timeout": 10, "interval": 1, "results": {"message_size": 16, "average_elapsed": 5060.962518056233, "best_elapsed": 5064.844369888306, "worst_elapsed": 5055.2918910980225, "failed_attempts": 1, "success_rate": 75.0, "measurements": [5064.844369888306, 5062.751293182373, 5055.2918910980225]}}

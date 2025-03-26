@@ -1,0 +1,1 @@
+{"module": "BLUETOOTH", "distance": 1, "message_sizes": [16, 32, 64, 128, 255], "timeout": 10, "interval": 1, "results": {"message_size": 16, "average_elapsed": 4382.538318634033, "best_elapsed": 4551.872968673706, "worst_elapsed": 4292.641401290894, "failed_attempts": 1, "success_rate": 75.0, "measurements": [4551.872968673706, 4292.641401290894, 4303.1005859375]}}

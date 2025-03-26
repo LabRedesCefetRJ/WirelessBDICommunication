@@ -1,0 +1,1 @@
+{"module": "XBEE", "distance": 1, "message_sizes": [16, 32, 64, 128, 255], "timeout": 10, "interval": 1, "results": {"message_size": 128, "average_elapsed": 706.4507007598877, "best_elapsed": 706.4507007598877, "worst_elapsed": 706.4507007598877, "failed_attempts": 3, "success_rate": 25.0, "measurements": [706.4507007598877]}}

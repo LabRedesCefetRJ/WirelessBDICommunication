@@ -12,4 +12,4 @@ if [ ! -f ./pythonENV/bin/python3 ]; then
 fi
 
 source pythonENV/bin/activate
-./pythonENV/bin/python3 ping.py
+./pythonENV/bin/python3 ping2.py
