@@ -13,8 +13,8 @@ QTD_MEDICOES = 10
 TIMEOUT = 15
 INTERVAL_BETWEEN_MEASUREMENTS = 1
 MESSAGE_SIZE = [16, 32, 64, 128, 255]  # Tamanhos de mensagem em bytes
-MODULE_NAME = "BLUETOOTH"  # Nome do módulo de transmissão
-TRANSMISSION_DISTANCE = 64  # Distância em metros
+MODULE_NAME = "RF"  # Nome do módulo de transmissão
+TRANSMISSION_DISTANCE = 32  # Distância em metros
 
 # Show configurations
 print(f"Number of measurements: {QTD_MEDICOES}")
