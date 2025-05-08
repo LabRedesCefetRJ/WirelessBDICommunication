@@ -9,11 +9,11 @@ porta = "/dev/ttyUSB0"
 comm = javino.start(porta)
 
 # Donfigurações
-QTD_MEDICOES = 10
-TIMEOUT = 15
+QTD_MEDICOES = 1
+TIMEOUT = 1
 INTERVAL_BETWEEN_MEASUREMENTS = 1
 MESSAGE_SIZE = [16, 32, 64, 128, 255]  # Tamanhos de mensagem em bytes
-MODULE_NAME = "RF"  # Nome do módulo de transmissão
+MODULE_NAME = "TESTE"  # Nome do módulo de transmissão
 TRANSMISSION_DISTANCE = 32  # Distância em metros
 
 # Show configurations
@@ -116,14 +116,14 @@ if comm:
                 "measurements": measurements
             }
             # Salvar em arquivo
-            dir = Path(f"{MODULE_NAME}/{TRANSMISSION_DISTANCE}m")
+            dir = Path(f"results/{MODULE_NAME}/{TRANSMISSION_DISTANCE}m")
             filename = f"{sizeOfMsg}B.txt"
             filepath = dir / filename
             dir.mkdir(parents=True, exist_ok=True)
 
             filepath.write_text(json.dumps(results))
 
-            print(f"Resultados salvos em {MODULE_NAME}/{TRANSMISSION_DISTANCE}m/{filename}")
+            print(f"Resultados salvos em results/{MODULE_NAME}/{TRANSMISSION_DISTANCE}m/{filename}")
     except KeyboardInterrupt:
         javino.disconnect(comm)
 else:
