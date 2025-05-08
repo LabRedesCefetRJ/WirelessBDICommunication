@@ -1,0 +1,1 @@
+{"module": "RF", "distance": 16, "message_sizes": [16, 32, 64, 128, 255], "timeout": 15, "interval": 1, "results": {"message_size": 128, "average_elapsed": 4688.659906387329, "best_elapsed": 4690.340757369995, "worst_elapsed": 4686.7101192474365, "failed_attempts": 7, "success_rate": 30.0, "measurements": [4686.7101192474365, 4688.928842544556, 4690.340757369995]}}
