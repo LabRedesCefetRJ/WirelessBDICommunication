@@ -4,6 +4,7 @@ from pathlib import Path
 
 # Diretório raiz onde estão os módulos
 ROOT_DIR = Path("./results/")  # Ajuste conforme necessário
+PROCESSED_DIR = Path("./processed_results/")  # Diretório para resultados processados
 
 # Campos que queremos no CSV
 CSV_FIELDS = [
@@ -18,7 +19,7 @@ CSV_FIELDS = [
 ]
 
 # Caminho de saída do CSV consolidado
-data_out = ROOT_DIR / "consolidated_results.csv"
+data_out = PROCESSED_DIR / "consolidated_results.csv"
 
 # Preparar escrita do CSV
 with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
