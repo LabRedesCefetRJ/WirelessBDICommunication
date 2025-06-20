@@ -13,7 +13,7 @@ QTD_MEDICOES = 10
 TIMEOUT = 15
 INTERVAL_BETWEEN_MEASUREMENTS = 1
 MESSAGE_SIZE = [16, 32, 64, 128, 255]  # Tamanhos de mensagem em bytes
-MODULE_NAME = "MOME_MODULO"  # Nome do módulo de transmissão
+MODULE_NAME = "MOME_MODULO"  # Nome do módulo de transmissão (NRF24L01_EXT, NRF24L01, LORA, RF, XBEE, BLE, BLUETOOTH)
 TRANSMISSION_DISTANCE = 64  # Distância em metros
 
 # Show configurations
