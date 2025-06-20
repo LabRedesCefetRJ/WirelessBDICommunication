@@ -28,6 +28,8 @@ with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
     writer.writeheader()
 
+    rows = []
+
     # Iterar sobre cada diretório de módulo
     for module_dir in ROOT_DIR.iterdir():
         if not module_dir.is_dir():
@@ -35,34 +37,29 @@ with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
 
         module_name = module_dir.name
 
-        # Para cada subpasta de distância
         for distance_dir in module_dir.iterdir():
             if not distance_dir.is_dir():
                 continue
 
-            # Extrair valor de distância (ex: "1m" -> 1)
             dist_str = distance_dir.name.lower().rstrip('m')
             try:
                 distance = float(dist_str)
             except ValueError:
                 continue
 
-            # Para cada arquivo JSON/texto na pasta de distância
-            for result_file in distance_dir.glob("*.txt"):  # ou *.json
+            for result_file in distance_dir.glob("*.txt"):
                 try:
                     data = json.loads(result_file.read_text())
                 except json.JSONDecodeError:
                     print(f"Falha ao ler JSON: {result_file}")
                     continue
 
-                # Em alguns casos o objeto "results" é lista ou único
                 results = data.get("results")
                 if isinstance(results, list):
                     iterable = results
                 else:
                     iterable = [results]
 
-                # Normalizar resultados ao CSV
                 for entry in iterable:
                     measurements = entry.get("measurements", [])
                     if isinstance(measurements, list) and len(measurements) >= 2:
@@ -71,7 +68,7 @@ with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
                         except Exception as e:
                             std_dev = ""
                     else:
-                        std_dev = ""  # Caso não haja medições suficientes
+                        std_dev = ""
 
                     row = {
                         "module": data.get("module", module_name),
@@ -84,6 +81,19 @@ with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
                         "success_rate": entry.get("success_rate"),
                         "std_deviation": std_dev
                     }
-                    writer.writerow(row)
+                    rows.append(row)
+
+# Ordenar a lista de resultados
+rows_sorted = sorted(
+    rows,
+    key=lambda r: (str(r["module"]), float(r["distance"]), int(r["message_size"]))
+)
+
+# Escrever no CSV
+with open(data_out, mode='w', newline='', encoding='utf-8') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
+    writer.writeheader()
+    for row in rows_sorted:
+        writer.writerow(row)
 
 print(f"CSV gerado em: {data_out.resolve()}")
