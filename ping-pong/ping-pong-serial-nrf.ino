@@ -13,7 +13,7 @@ RF24 radio(CE_PIN, CSN_PIN);
 const byte addresses[][6] = {"00001", "00002"};
 
 // Definir número do rádio (0 ou 1)
-bool radioNumber = 0; // Índice do addresses do rádio (0 para o primeiro dispositivo, 1 para o segundo)
+bool radioNumber = 1; // Índice do addresses do rádio (0 para o primeiro dispositivo, 1 para o segundo)
 
 const int MAX_PAYLOAD_SIZE = 32;
 
@@ -36,6 +36,8 @@ void sendLargeMessage(const char* message) {
 
     if (success) {
       bytesSent += chunkSize;
+    } else {
+      break;
     }
 
     delay(10); // Pequena pausa entre pacotes
@@ -45,6 +47,7 @@ void sendLargeMessage(const char* message) {
 void setup() {
   Serial.begin(9600);
   radio.begin(); // Inicializar o módulo nRF24L01
+  radio.setRetries(5, 15); // Delay entre tentativas + número de tentativas
   
   radio.setPALevel(RF24_PA_MIN); // Potência de transmissão baixa
   
