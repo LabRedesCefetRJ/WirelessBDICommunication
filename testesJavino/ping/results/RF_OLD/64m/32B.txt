@@ -1,1 +1,0 @@
-{"module": "RF_OLD", "distance": 64, "message_sizes": [16, 32, 64, 128, 255], "timeout": 15, "interval": 1, "results": {"message_size": 32, "average_elapsed": 0, "best_elapsed": 0, "worst_elapsed": Infinity, "failed_attempts": 10, "success_rate": 0.0, "measurements": []}}
