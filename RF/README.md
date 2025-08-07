@@ -24,6 +24,6 @@ Existe um módulo RF para transmissão e outro para recepção. Não é necessá
 |  GND |  GND    |
 |  TX  |  12 (TX)|
 
-Adicionalmente, foram conectadas antenas de 17cm para aumentar o alcance do sinal na porta de antena para cada módulo.
+Adicionalmente, foram conectadas antenas de 34,56 cm (1/2 do cumprimento de onda) para aumentar o alcance do sinal na porta de antena para cada módulo.
 
 Note que as portas `RX` e `TX` devem ser conectadas às portas `TX` e `RX` do Arduino, respectivamente, para os dois módulos.
