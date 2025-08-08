@@ -71,4 +71,4 @@ Ambos coordenadores e roteadores devem ser conectados ao Arduíno da seguinte fo
 |  RX     |  10 (TX) Com divisor de tensão `R1 = 1k` e `R2 = 2k`  |
 |  EN     |  --       |
 
-Note que, no caso destes módulos, a conexão RX/TX é cruzada. Ou seja, A porta `RX` do módulo `TX` Arduino e vice-versa.
+Note que, no caso destes módulos, a conexão RX/TX é cruzada. Ou seja, A porta `RX` do módulo na `TX` do Arduino e vice-versa.
