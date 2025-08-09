@@ -1,4 +1,4 @@
-# Comunicação via Bluetooth
+# Comunicação via Bluetooth (HC-05)
 
 Conjunto de códigos Arduíno para realizar a comunicação sem fio usando módulos HC-05.
 

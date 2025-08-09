@@ -8,7 +8,7 @@ from pathlib import Path
 porta = "/dev/ttyUSB0"  
 comm = javino.start(porta)
 
-# Donfigurações
+# Configurações
 QTD_MEDICOES = 10
 TIMEOUT = 15
 INTERVAL_BETWEEN_MEASUREMENTS = 1
