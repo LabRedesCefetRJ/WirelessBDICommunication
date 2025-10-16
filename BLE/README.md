@@ -6,7 +6,8 @@ Conjunto de códigos Arduíno para realizar a comunicação sem fio em BLE usand
 
 Por se tratar de um ESP32, foi necessário instalar a placa no Arduino IDE. Para isso, acesse `File > Preferences` e adicione o seguinte link no campo `Additional Boards Manager URLs`:
 
-```https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+```
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 ```
 
 Em seguida, vá em `Tools > Board > Board Manager`, busque por `esp32` e instale a placa da Espressif.
